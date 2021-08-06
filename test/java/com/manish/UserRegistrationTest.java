@@ -23,4 +23,18 @@ public class UserRegistrationTest {
         boolean result = userRegistrationMain.usernameValidation("Jon@");
         Assertions.assertEquals(result,false);
     }
+
+    @Test
+    void givenlastnameshouldbeTrue() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.usernameValidation("Doe");
+        Assertions.assertEquals(result,true);
+    }
+
+    @Test
+    void givenlastnameshouldbeFalse() {
+        UserRegistrationMain userRegistrationMain = new  UserRegistrationMain();
+        boolean result = userRegistrationMain.usernameValidation("Doe@");
+        Assertions.assertEquals(result,false);
+    }
 }
