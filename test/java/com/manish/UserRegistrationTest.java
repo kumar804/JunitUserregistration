@@ -52,5 +52,19 @@ public class UserRegistrationTest {
         Assertions.assertEquals(result,false);
 
     }
+
+    @Test
+    void givenpasswordrulemustbeTrue() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.passwordValidation("manishkm");
+        Assertions.assertEquals(result,true);
+    }
+
+    @Test
+    void givenpasswordrulemustbeFalse() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.passwordValidation("manishk");
+        Assertions.assertEquals(result,false);
+    }
 }
 

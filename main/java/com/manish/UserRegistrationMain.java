@@ -33,9 +33,22 @@ public class UserRegistrationMain {
         Matcher m = p.matcher(mobileNum);
         return m.matches();
 
+    }
+    /*
+    passwordValidation is a function to check password validation
+      password validation part 1 is enter minimum 8 characters
+
+     */
+    public static boolean passwordValidation(String password){
+        String regex = "^[a-z A-z]{8,}$";
+        Pattern p = Pattern.compile(regex);
+        if ( password == null ){
+            return false;
+        }
+        Matcher m = p.matcher(password);
+        return m.matches();
 
     }
-
 
     public static void main(String[] args) {
 
@@ -48,6 +61,15 @@ public class UserRegistrationMain {
         System.out.print("Enter the your Last Name : ");
         String lname = input.nextLine();
         System.out.println(usernameValidation(lname));
+        System.out.print("Enter the your Mobile Number : ");
+        String mNumber = input.nextLine();
+        System.out.println(mobileNumValidation(mNumber));
+        System.out.print("Enter the your Password : ");
+        String password = input.nextLine();
+        System.out.println(passwordValidation(password));
+
+
+
 
     }
 }
