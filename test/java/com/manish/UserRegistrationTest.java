@@ -37,4 +37,20 @@ public class UserRegistrationTest {
         boolean result = userRegistrationMain.usernameValidation("Doe@");
         Assertions.assertEquals(result,false);
     }
+
+    @Test
+    void givenmobilenumbershouldbeTrue() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.mobileNumValidation("91 8969283357");
+        Assertions.assertEquals(result,true);
+    }
+
+    @Test
+    void givenmobilenumbershouldbeFalse() {
+        UserRegistrationMain userRegistrationMain  = new UserRegistrationMain();
+        boolean result = userRegistrationMain.mobileNumValidation("918969283357");
+        Assertions.assertEquals(result,false);
+
+    }
 }
+

@@ -22,6 +22,21 @@ public class UserRegistrationMain {
 
     }
 
+
+    public static boolean mobileNumValidation(String mobileNum) {
+        String mobileNumber = "^[9][1]\\s[6-9]{1}[0-9]{9}$";
+        Pattern p = Pattern.compile(mobileNumber);
+        if ( mobileNumber == null ){
+            return false;
+
+        }
+        Matcher m = p.matcher(mobileNum);
+        return m.matches();
+
+
+    }
+
+
     public static void main(String[] args) {
 
         System.out.println("Welcome to junit Userregistration");
