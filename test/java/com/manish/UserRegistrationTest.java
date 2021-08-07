@@ -54,31 +54,16 @@ public class UserRegistrationTest {
     }
 
     @Test
-    void givenpasswordrulemustbeTrue() {
+    void givenpasswordruleshould_retuenTrue() {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
-        boolean result = userRegistrationMain.passwordValidation("manishkm");
+        boolean result = userRegistrationMain.passwordValidation("Manishkm@1");
         Assertions.assertEquals(result,true);
     }
 
     @Test
-    void givenpasswordrulemustbeFalse() {
+    void givenpasswordshould_returnFalse() {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
-        boolean result = userRegistrationMain.passwordValidation("manishk");
-        Assertions.assertEquals(result,false);
-    }
-
-    @Test
-    void givenpassword_shouldoneuppercaseletterTrue() {
-        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
-        boolean result = userRegistrationMain.passwordValidation("Manishkm");
-        Assertions.assertEquals(result,true);
-
-    }
-
-    @Test
-    void givenpassword_shouldoneuppercaseletterFalse() {
-        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
-        boolean result = userRegistrationMain.passwordValidation("manishkm");
+        boolean result = userRegistrationMain.passwordValidation("manish@km1");
         Assertions.assertEquals(result,false);
     }
 }
