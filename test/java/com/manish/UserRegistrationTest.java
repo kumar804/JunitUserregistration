@@ -66,5 +66,20 @@ public class UserRegistrationTest {
         boolean result = userRegistrationMain.passwordValidation("manishk");
         Assertions.assertEquals(result,false);
     }
+
+    @Test
+    void givenpassword_shouldoneuppercaseletterTrue() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.passwordValidation("Manishkm");
+        Assertions.assertEquals(result,true);
+
+    }
+
+    @Test
+    void givenpassword_shouldoneuppercaseletterFalse() {
+        UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
+        boolean result = userRegistrationMain.passwordValidation("manishkm");
+        Assertions.assertEquals(result,false);
+    }
 }
 
